@@ -1,0 +1,133 @@
+/* 版心 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+    /* 居中对齐 */
+}
+
+/* 快捷导航模块  */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.shortcut {
+    height: 44px;
+    line-height: 44px;
+    /* 垂直居中 */
+
+}
+
+.shortcut ul li {
+    float: left;
+    margin-left: 20px;
+}
+
+.style_blue {
+    color: white;
+    background-color: #4e6ef2;
+}
+
+.shortcut ul li a:hover {
+    color: white;
+    background-color: #4e6ef2;
+}
+
+/* header头部制作 */
+.header {
+    position: relative;
+    height: 400px;
+
+}
+
+.logo {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    margin-left: -270px;
+    width: 540px;
+    height: 258px;
+
+}
+
+.logo a {
+    font-size: 0;
+    display: block;
+    width: 540px;
+    height: 258px;
+    background: url(../images/LOGO.png) no-repeat;
+}
+
+.search {
+    width: 800px;
+    height: 44px;
+    border: 2px solid #c4c7ce;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top: 250px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.search input {
+    float: left;
+    width: 700px;
+    height: 40px;
+    font-size: 17px;
+    padding-left: 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+.search button {
+    background-color: #4e6ef2;
+    color: #fff;
+    float: right;
+    width: 96px;
+    height: 40px;
+    border-radius: 0 10px 10px 0;
+    font-size: 18px;
+}
+
+/* 底部模块制作 */
+.footer {
+    margin-top: 230px;
+    height: 350px;
+
+    padding-top: 100px;
+}
+
+.mod_copyright {
+    height: 100px;
+
+    text-align: center;
+    color: #c5c5c5;
+    padding-top: 20px;
+}
+
+.links {
+    margin-bottom: 15px;
+}
+
+.copyright {
+    font-style: 14px;
+}
+
+.links ul li {
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+
+}
+
+.links ul li a {
+    color: #c5c5c5;
+}
+
+.links ul li a:hover {
+    color: #222222;
+}

@@ -1,0 +1,120 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tai-chi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #adadad;
+        }
+
+        #yinyang {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(
+                    /*圆球上半部分为白色，下半部分为黑色*/
+                    to bottom,
+                    #ffffff 0%,
+                    #ffffff 50%,
+                    #000000 50%,
+                    #000000 100%);
+            position: relative;
+            margin: 100px auto;
+        }
+
+        #yinyang::before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 40px solid black;
+            /*左侧黑球套白点*/
+            background-color: white;
+            left: 0;
+            top: 50px;
+        }
+
+        #yinyang::after {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 40px solid white;
+            /*右侧白球套黑点*/
+            background-color: black;
+            right: 0;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="yinyang"></div>
+
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Tai-chi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #adadad;
+        }
+
+        #yinyang {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(
+                    /*圆球上半部分为白色，下半部分为黑色*/
+                    to bottom,
+                    #ffffff 0%,
+                    #ffffff 50%,
+                    #000000 50%,
+                    #000000 100%);
+            position: relative;
+            margin: 100px auto;
+        }
+
+        #yinyang::before {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 40px solid black;
+            /*左侧黑球套白点*/
+            background-color: white;
+            left: 0;
+            top: 50px;
+        }
+
+        #yinyang::after {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 40px solid white;
+            /*右侧白球套黑点*/
+            background-color: black;
+            right: 0;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="yinyang"></div>
+
+>>>>>>> 00882cf (none)
+</html>
