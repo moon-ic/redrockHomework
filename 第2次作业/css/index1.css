@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.box div {
+    width: 180px;
+    height: 50px;
+    background-color: grey;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* qwq    ------我是分割线哦---------      qwq*/
+
+a {
+    text-decoration: none;
+    /*取消下划线*/
+}
+
+a+p {
+    color: red;
+}
+
+p+div:hover {
+    background-color: yellow;
+}
+
+li:nth-child(1) {
+    font-size: 20px;
+}
+
+li:nth-child(2) {
+    font-size: 30px;
+}
+
+li:nth-child(3) {
+    font-size: 40px;
+}
+
+ul+p {
+    color: red;
+}

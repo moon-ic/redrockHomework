@@ -1,0 +1,86 @@
+/* 大盒子 */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background-color: #6495ed;
+    border: 2px solid #1a73e8;
+    width: 320px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.box:hover {
+    box-shadow: 10px 10px 10px 10px rgb(147, 149, 150, 0.5);
+    transform: scale(1.1);
+}
+
+/* logo模块 */
+.logo {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.gi {
+    border-radius: 10px 10px 10px 0px;
+}
+
+.gi:hover {
+    transform: scale(1.2);
+
+}
+.sha{
+    border-radius: 10px 10px 0px 10px;
+}
+.sha:hover {
+    transform: scale(1.2);
+
+}
+
+/* 内容模块 */
+.content {
+    border: 1px solid lightblue;
+    display: flex;
+
+}
+
+.ge {
+    width: 160px;
+    background-color: lightblue;
+    height: 400px;
+}
+
+.di {
+    width: 160px;
+    background-color: lightcyan;
+    height: 400px;
+}
+
+/* 按钮 */
+button {
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    background-color: #1a73e8;
+    color: #fff;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #1a73e8;
+    border-radius: 15px 15px 15px 15px;
+    font-size: 18px;
+    outline: none;
+}
+
+button:hover {
+    background-color: cornflowerblue;
+}

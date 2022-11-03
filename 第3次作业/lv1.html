@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redRock Homeworklv1</title>
+
+    <script type="text/javascript">
+
+        Array.prototype.myPush = null;
+        // 从原型上重新定义属性
+        function myPush(arr) {
+            if (!this.length) {
+                this.length = 0
+            }
+            if (isNaN(Number(this.length))) {
+                this.length = 0
+            }
+            // 补充length属性不存在的情况
+            for (let i = 0; i < arguments.length; i++) {
+                this[this.length] = arguments[i]
+            }
+            return this.length;
+        }
+        Array.prototype.myPush = myPush;
+        let a = [1];
+        a.myPush(2);
+        console.log(a);
+        var b = a.length;
+        console.log(b);
+
+
+        // 方法2
+        function myPush2(arr, value) {
+            if (!arr.length) {
+                arr.length = 0
+            }
+            if (isNaN(Number(arr.length))) {
+                arr.length = 0
+            }
+            // 补充length属性不存在的情况
+            arr[arr.length] = value;
+            return arr.length;
+        }
+        myPush2(a, 3);
+        console.log(a);
+        var b = a.length;
+        console.log(b);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

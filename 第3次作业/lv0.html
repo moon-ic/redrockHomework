@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redRock Homeworklv0</title>
+    <script type="text/javascript">
+        // 1
+        let qwq = new Object();
+        // 2
+        let QAQ = {
+            name: "可爱滴捏",
+            age: "哭哭"
+        }
+
+        // 3 工厂模式
+        function Person(name, age) {
+            const obj = {};
+            obj.name = name;
+            obj.age = age;
+            obj.sayName = fun;// 也可以直接命名函数
+            return obj;
+        }
+        function fun() {
+            alert(this.name);
+        }// 减少重复构造属性，但是污染全局中命名空间，很不安全
+        var obj1 = Person("6", 6);
+
+        // 4 构造函数
+        function Person(name) {
+            this.name = name;
+        }
+        let per = new Person(haoye);
+
+        // 5 原型模式
+
+        function a() { }
+        a.prototype.p = "2";
+        var t = new a();
+        console.log(t.p);
+        var t2 = new a();
+        console.log(t2.p);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
