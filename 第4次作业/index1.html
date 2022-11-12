@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        // lv3
+        let x = Null;
+        // 无法取出null值，不会写了，摆！orz
+        let a = Type(x);
+        console.log(a);
+        // `===` 严格相等，会比较两个值的类型和值
+        // `==`  抽象相等，比较时，会先进行类型转换，然后再比较值
+        const equal = function (x, y) {
+            if (typeof x !== typeof y) {
+                return false;
+            }
+            else {
+                if (typeof x === undefined || typeof x === Null || typeof x === Boolean && typeof y === Boolean) {
+                    return true;
+                }
+                else if (typeof x === String) {
+
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

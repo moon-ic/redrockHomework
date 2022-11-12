@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+
+        // lv4
+        //1.浅拷贝：创建一个新对象，这个对象有着原始对象属性值的一份精确拷贝。如果属性是基本类型，拷贝的就是基本类型的值，如果属性是引用类型，拷贝的就是内存地址 ，所以如果其中一个对象改变了这个地址，就会影响到另一个对象。
+        const obj = {};
+        const source = {
+            name: 'nordon',
+            info: {
+                age: 18
+            }
+        };
+        // 创建两个对象
+        Object.assign(obj, source);
+        //运用方法： Object.assign 是 Object 的一个方法，该方法可以用于 JS 对象的合并等多个用途，其中一个用途就是可以进行浅拷贝。该方法的第一个参数是拷贝的目标对象，后面的参数是拷贝的来源对象（也可以是多个来源）。
+
+        //2.深拷贝：将一个对象从内存中完整的拷贝一份出来,从堆内存中开辟一个新的区域存放新对象,且修改新对象不会影响原对象
+        function clone(target) {
+            if (typeof target === 'object') {
+                let cloneTarget = {};
+                // 运用建立新对象开辟新的空间
+                for (const i in target) {
+                    cloneTarget[i] = clone(target[i]);
+                }
+                return cloneTarget;
+            } else {
+                return target;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

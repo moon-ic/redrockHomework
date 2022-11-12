@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+
+        const stu = {
+            name: 'MING',
+            hobby: ['play', 'run', 'sing'],
+            address: {
+                school: 'ChongQing',
+                home: 'HENAN'
+            },
+            title: ['student', { year: 2022 }],
+            skills: {
+                speak() {
+                    this.name = 'JACK';
+                }
+            }
+        }
+
+        // lv0
+        const { name } = stu;
+        const { hobby: [h1, h2, h3] } = stu;
+        const { address: { home: HOME } } = stu;
+        const { title: [student, { year }] } = stu;
+        // 你的代码
+        console.log(name)  // MING
+        console.log(h1, h2, h3)  // play run sing
+        console.log(HOME)  // HENAN，这里的HOME就是大写哈
+        console.log(year)  // 2022
+
+
+
+        // lv1
+        // 1.循环遍历
+        function sumTo(n) {
+            var sum = 0;
+            for (var i = 1; i < n; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        let sum1 = sumTo(100);
+        console.log(sum1);
+
+        // 2.递归
+        function sumTo1(n) {
+            if (n === 1) {
+                return 1;
+            }
+            else {
+                return sumTo1(n - 1) + n;
+            }
+        }
+        let sum2 = sumTo(100);
+        console.log(sum2);
+
+
+
+        // lv2
+        // this，指向最后调用他的对象，所以要把this提前。建立新的方法，同样调用this，但是这次对像变了
+        const fn = function (obj) {
+            let temp1 = obj.skills.speak;
+            obj.Tempspeak = temp1;
+            obj.Tempspeak();
+            delete obj.Tempspeak;
+        }
+        fn(stu);
+        console.log(stu.name); // JACK
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
