@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body,
+        input {
+            font-size: 14px;
+            line-height: 30px;
+            color: #333;
+            font-family: Microsoft yahei, Song, Arial, Helvetica, Tahoma, Geneva;
+        }
+
+        /* 初始化 */
+        h1 {
+            margin-bottom: 15px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 24px;
+            color: #fff;
+            background: black;
+        }
+
+        /* 标题 */
+
+        #contentBox {
+            width: 960px;
+            position: relative;
+            left: 50%;
+            margin-left: -480px;
+        }
+
+        /* 大盒子 */
+
+        #inputBox {
+            margin-bottom: 2px;
+        }
+
+        /* 表单盒子 */
+
+        textarea {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 958px;
+            height: 390px;
+            border: 1px #d1d1d1 solid;
+            border-radius: 5px;
+            resize: none;
+            outline: none;
+        }
+
+        /* 文本框 */
+
+        #btnBox {
+            float: right;
+        }
+
+        /* 按钮盒子 */
+        #commentBox {
+            margin-top: 50px;
+            width: 970px;
+            height: 300px;
+        }
+
+        /* 静态页面结束 */
+        .tempBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 970px;
+            margin-top: 2px;
+        }
+
+        .commentItem {
+            border: 1px #70dbdf solid;
+            background-color: #ebf9fb;
+            display: flex;
+            border-radius: 3px;
+            padding: 5px;
+            justify-content: space-between;
+        }
+
+        .delete {
+            border: 1px #70dbdf solid;
+            background-color: cornflowerblue;
+            color: white;
+            border-radius: 5px;
+            width: 90px;
+            height: 20px;
+        }
+
+        .nameHi {
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* js函数定义部分 */
+        textarea:hover {
+            border: 1px #70dbdf solid;
+            background: #ebf9fb;
+
+        }
+
+        .transition {
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            -ms-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+        }
+
+
+        /* css动画渲染部分 */
+
+
+
+        /* 动态页面结束 */
+    </style>
+    <script type="module">
+        window.onload = () => {
+            let postBtn = document.querySelector('#postBtn');
+            let clearBtn = document.querySelector('#clearBtn');
+            let textArea = document.querySelector('textarea');
+            let commentBox = document.querySelector("#commentBox");
+            let hi = document.querySelectorAll('.hi');
+            var named = "——万门之门，无尽星空的引路人";
+            // 为按钮，留言区分别绑定对象
+
+            for (let i = 0; i < hi.length; i++) {
+                hi[i].onclick = () => {
+                    alert('我好像感觉到了陛下的气息————');
+                    alert("陛下，是您回来了吗？！您又再度眷顾您的神国了吗？")
+                    var name = prompt("伟大的陛下，敢问您的尊讳？", "");
+                    named = name;
+                    if (named)// 如果返回值不为空
+                    {
+                        alert("伟大的" + name + "陛下又回到了他忠诚的领土————想必他又要发表他超越时代的见解，引领，下一个时代的浪潮！");
+                        alert("陛下千古！");
+                        document.getElementById("nicheng").style.display = "none";
+                        document.getElementById("shurukuang").value = named;
+                    }
+                    else {
+                        document.getElementById("nicheng").value = "匿名发言者";
+                    }
+                }
+            }
+            // 输入昵称功能
+            postBtn.onclick = () => {
+                let tempItem = document.createElement("div");
+                let tempName = document.createElement("div");
+                let tempBox = document.createElement("div");
+                let tempContent = document.createElement("div");
+                let tempDelete = document.createElement("div");
+
+                tempItem.classList.add("commentItem");
+                tempBox.classList.add("tempBox");
+                tempBox.appendChild(tempName);
+                tempBox.appendChild(tempItem);
+                tempItem.appendChild(tempContent);
+                tempItem.appendChild(tempDelete);
+                tempName.innerHTML = "<div class='nameHi'>伟大的" + named + "陛下</div>";
+
+                tempDelete.innerHTML = '<button class="delete">收回法令</button>';
+                tempContent.innerHTML = textArea.value;
+
+                tempDelete.onclick = () => {
+                    tempBox.remove();
+                }
+                commentBox.appendChild(tempBox);
+            }
+            clearBtn.onclick = () => {
+                if (textArea.value == "") {
+                    alert("这里没有要清空的内容");
+                } else {
+                    textArea.value = null;
+                }
+            }
+            //两个按钮功能
+            // 输入时间功能
+        }
+    </script>
+</head>
+
+<body>
+    <h1>王的净土</h1>
+    <div id="contentBox">
+        <div id="postBox">
+            <div id="inputBox" style="background:cornflowerblue ;height:30px;width: 970px;border-radius: 2px;">
+                <input type="submit" value="神秘盒子，似乎可以点击" id="nicheng" class="hi"
+                    style="border:none; background-color:cornflowerblue; color:white;margin-left: 400px;">
+                <input type="text" id="shurukuang" class="hi"
+                    style="border:none; background-color:cornflowerblue; color:white;">
+            </div>
+
+            <div>
+                <textarea class="transition"></textarea>
+            </div>
+
+            <div id="btnBox">
+                <input type="button" value="颁布法令" id="postBtn"
+                    style="border:none; background-color:cornflowerblue; color:white;border-radius:5px; width:100px; height:30px;">
+                <input type="button" value="清空" id="clearBtn"
+                    style="border:none; background-color:cornflowerblue; color:white;border-radius:5px; width:80px; height:30px;">
+            </div>
+        </div>
+
+        <hr style="margin-top:150px;height:1px;border:none;border-top:1px dashed #d1d1d1;" />
+
+        <div id="commentBox">
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
