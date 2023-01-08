@@ -1,0 +1,80 @@
+<style>
+    * {
+        padding: 0;
+        margin: 0px;
+    }
+
+    #blue {
+        background-color: skyblue;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    #orange {
+        background-color: orange;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+
+    #black {
+        background-color: black;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+</style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="blue"></div>
+        <div id="orange"></div>
+        <div id="black"></div>
+    </div>
+    <script>
+        let blue = document.querySelector("#blue");
+        let orange = document.querySelector("#orange");
+        let black = document.querySelector("#black");
+        let m = 0;
+        setTimeout(() => {
+            let t = setInterval(() => {
+                m += 2;
+                blue.style.left = m + "px";
+            }, 10)
+            setTimeout(() => {
+                m = 0;
+                clearInterval(t);
+                t = setInterval(() => {
+                    m += 2;
+                    orange.style.left = m + "px"
+                }, 10)
+                setTimeout(() => {
+                    m = 0;
+                    clearInterval(t)
+                    t = setInterval(() => {
+                        m += 2;
+                        black.style.left = m + "px"
+                    }, 10)
+                    setTimeout(() => {
+                        clearTimeout(t)
+                    }, 1000)
+                }, 1000);
+            }, 1000);
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.setTimeout定时器嵌套</title>
+    <style>
+        #blue {
+            background-color: skyblue;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #orange {
+            background-color: orange;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #black {
+            background-color: black;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="blue"></div>
+        <div id="orange"></div>
+        <div id="black"></div>
+    </div>
+    <script>
+        let blue = document.querySelector("#blue");
+        let orange = document.querySelector("#orange");
+        let black = document.querySelector("#black");
+
+        let step = (elem) => {
+            return new Promise((resolve) => {
+                let m = 0;
+                t = setInterval(() => {
+                    m += 2;
+                    if (m >= 200) {
+                        m = 200;
+                        clearInterval(t);
+                    }
+                    elem.style.left = m + "px";
+                    if (elem.style.left === "200px") {
+                        resolve()
+                    }
+                }, 10)
+            })
+        }
+        async function demo() {
+            await step(blue);
+            await step(orange);
+            await step(black);
+        }
+        demo()
+    </script>
+</body>
+
+</html>

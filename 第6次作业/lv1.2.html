@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.setTimeout定时器嵌套</title>
+    <style>
+        #blue {
+            background-color: skyblue;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #orange {
+            background-color: orange;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        #black {
+            background-color: black;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="blue"></div>
+        <div id="orange"></div>
+        <div id="black"></div>
+    </div>
+    <script>
+        let blue = document.querySelector("#blue");
+        let orange = document.querySelector("#orange");
+        let black = document.querySelector("#black");
+        let m = 0;
+
+        let p = new Promise((resolve, reject) => {
+            let t = setInterval(() => {
+                m += 2;
+                if (m >= 200) {
+                    m = 200;
+                    clearInterval(t);
+                }
+                blue.style.left = m + "px";
+                if (blue.style.left === "200px") {
+                    resolve();
+                }
+            }, 10)
+        }).then(value => {
+            m = 0;
+            return new Promise((resolve) => {
+                t = setInterval(() => {
+                    m += 2;
+                    if (m >= 200) {
+                        m = 200;
+                        clearInterval(t);
+                    }
+                    orange.style.left = m + "px";
+                    if (orange.style.left === "200px") {
+                        resolve()
+                    }
+                }, 10)
+            })
+        }).then(value => {
+            m = 0;
+            t = setInterval(() => {
+                m += 2;
+                if (m >= 200) {
+                    m = 200;
+                    clearInterval(t);
+                }
+                black.style.left = m + "px";
+            }, 10)
+        })
+    </script>
+</body>
+
+</html>

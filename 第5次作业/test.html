@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>lalaa</button>
+</body>
+<script>
+    let but = document.querySelector("button")
+    function interval(callback, delay) {
+        let id = setInterval(() => callback(id), delay)
+    }
+    but.onclick = () => {
+        let n = 0;
+        let timer = interval((a) => {
+            console.log(a)
+            n++;
+            // let res = n == 100 ? clearInterval(a) : n
+            if (n == 10) {
+                clearInterval(a);
+            }
+        }, 100)
+    }
+</script>
+
+</html>
